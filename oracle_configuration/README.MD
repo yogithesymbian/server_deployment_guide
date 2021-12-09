@@ -48,15 +48,15 @@ Automating Shutdown and Startup
 // for create user  | https://stackoverflow.com/a/41490385/8122500
 alter session set "_ORACLE_SCRIPT"=true;
 
-CREATE USER baital IDENTIFIED BY Imt1999 DEFAULT TABLE-SPACE example QUOTA 10M ON example TEMPORARY TABLESPACE temp QUOTA 5M ON system PROFILE app_user PASSWORD EXPIRE;
+CREATE USER yogithesymbian IDENTIFIED BY Imt1999 DEFAULT TABLE-SPACE example QUOTA 10M ON example TEMPORARY TABLESPACE temp QUOTA 5M ON system PROFILE app_user PASSWORD EXPIRE;
 
-CREATE USER baital IDENTIFIED BY baital123 PASSWORD EXPIRE;
+CREATE USER yogithesymbian IDENTIFIED BY yogithesymbian123 PASSWORD EXPIRE;
 CREATE USER oracle IDENTIFIED BY oracle123 PASSWORD EXPIRE;
 
 alter session set "_ORACLE_SCRIPT"=true;
 
-GRANT CREATE SESSION TO baital;
-grant sysdba to baital;
+GRANT CREATE SESSION TO yogithesymbian;
+grant sysdba to yogithesymbian;
 grant sysdba to oracle;
 GRANT sysdba to oracle;
 GRANT ALL PRIVILEGES TO super;
@@ -75,7 +75,7 @@ ssh tunneling
 ----
 server host: yourIPserver
 Login : oracle
-password: baital123
+password: yogithesymbian123
 remote port: 22
 
 optional for private key
