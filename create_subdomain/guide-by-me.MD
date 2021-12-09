@@ -1,9 +1,3 @@
-# ssh
-```
-ssh-keygen -t rsa -b 4096
-ssh-copy-id username@ip
-```
-
 # Download the file and save as SubdomainGenerator.sh
 ```
 wget -O SubdomainGenerator.sh https://raw.githubusercontent.com/karakanb/nginx-subdomain-generator-script/master/SubdomainGenerator.sh
