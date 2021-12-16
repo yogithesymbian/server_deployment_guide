@@ -2,6 +2,7 @@ server {
     server_name subdomain.yogithesymbian.id www.subdomain.yogithesymbian.id;
     root /var/www/subdomain/public_html;
 
+    # for api comment all add_header
     add_header Access-Control-Allow-Origin *;
     add_header X-Frame-Options "SAMEORIGIN";
     add_header X-XSS-Protection "1; mode=block";
@@ -13,6 +14,13 @@ server {
 
     location / {
         try_files $uri $uri/ /index.php?$query_string;
+        ## for api uncomment proxy_pass
+        # proxy_pass http://127.0.0.1:3000;
+        ## additional proxy configurations here
+        # proxy_set_header Upgrade $http_upgrade;
+        # proxy_set_header Connection 'upgrade';
+        # proxy_set_header Host $host;
+        # proxy_cache_bypass $http_upgrade;
     }
 
     location = /favicon.ico { access_log off; log_not_found off; }
