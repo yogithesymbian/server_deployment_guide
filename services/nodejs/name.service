@@ -1,0 +1,20 @@
+#/etc/systemd/system/node-gjmf-1.service
+
+Description = node-gjmf-1.service
+After network.target = node-gjmf-1.service
+
+[Service]
+ExecStart=/usr/bin/npm run dev /home/gjmfapp/gjmf-api-nodejs/server.js
+Restart=on-failure
+StandardOutput=syslog
+StandardError=syslog
+
+SyslogIdentifier=node-gjmf-1
+User=nobody
+Group=root
+
+Environment=NODE_ENV=production PORT=3005
+WorkingDirectory=/home/gjmfapp/gjmf-api-nodejs
+
+[Install]
+WantedBy=multi-user.target
